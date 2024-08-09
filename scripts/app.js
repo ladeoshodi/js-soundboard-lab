@@ -46,7 +46,7 @@ function playSong() {
     if (songOrder === songOrderList.length) {
       clearInterval(intervalInt);
     }
-  }, 500);
+  }, 1000);
 }
 /*----------------------------- Event Listeners -----------------------------*/
 playerButtons.forEach((playerButton) => {
