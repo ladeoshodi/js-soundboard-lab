@@ -23,7 +23,7 @@ body {
   text-align: center;
   position: relative;
   border: 2px solid #222;
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 #player div:hover {
@@ -44,11 +44,11 @@ body {
 #randomizer:hover {
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 .playing {
   transform: scale(1.1);
   background-color: black;
   color: white !important;
-  transition: all 0.3s ease;
 }
