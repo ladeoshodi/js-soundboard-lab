@@ -33,7 +33,8 @@ body {
   transform: scale(1.1);
 }
 
-#randomizer {
+#randomizer,
+#play-song {
   margin-top: 30px;
   padding: 20px;
   background-color: rgb(204, 204, 204);
@@ -41,7 +42,8 @@ body {
   font-family: "Exo 2", sans-serif;
 }
 
-#randomizer:hover {
+#randomizer:hover,
+#play-song:hover {
   background-color: black;
   color: white;
   cursor: pointer;

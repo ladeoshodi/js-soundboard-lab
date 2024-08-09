@@ -6,6 +6,7 @@ let playedAudios = [];
 const playerButtons = Array.from(document.querySelectorAll("#player > div"));
 const audio = document.querySelector("#audio");
 const randomBtn = document.querySelector("#randomizer");
+const playSongBtn = document.querySelector("#play-song");
 /*-------------------------------- Functions --------------------------------*/
 function playAudio(audioEl) {
   audio.src = `sounds/${audioEl.id}.wav`;
@@ -21,7 +22,7 @@ function playRandomAudio(e) {
 }
 
 function cleanUp() {
-  let intervalInt = setInterval(() => {
+  const intervalInt = setInterval(() => {
     try {
       let playedAudio = playedAudios.shift();
       playedAudio.classList.remove("playing");
@@ -33,6 +34,20 @@ function cleanUp() {
     }
   }, 500);
 }
+
+function playSong() {
+  let songOrderList = playerButtons.sort(
+    (a, b) => a.dataset.order - b.dataset.order
+  );
+  let songOrder = 0;
+  const intervalInt = setInterval(() => {
+    playAudio(songOrderList[songOrder]);
+    songOrder++;
+    if (songOrder === songOrderList.length) {
+      clearInterval(intervalInt);
+    }
+  }, 480);
+}
 /*----------------------------- Event Listeners -----------------------------*/
 playerButtons.forEach((playerButton) => {
   playerButton.addEventListener("click", (e) => {
@@ -43,3 +58,5 @@ playerButtons.forEach((playerButton) => {
 randomBtn.addEventListener("click", playRandomAudio);
 
 audio.addEventListener("ended", cleanUp);
+
+playSongBtn.addEventListener("click", playSong);
