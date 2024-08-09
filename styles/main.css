@@ -2,7 +2,7 @@ body {
   max-width: 500px;
   margin: 0 auto;
   background-color: #fafafa;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,11 +23,14 @@ body {
   text-align: center;
   position: relative;
   border: 2px solid #222;
+  transition: transform 0.3s ease;
 }
 
 #player div:hover {
   background-color: black;
   color: white;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #randomizer {
@@ -35,7 +38,7 @@ body {
   padding: 20px;
   background-color: rgb(204, 204, 204);
   border: 2px solid black;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 #randomizer:hover {
