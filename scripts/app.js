@@ -32,7 +32,7 @@ function cleanUp() {
     if (!playedAudios.length) {
       clearInterval(intervalInt);
     }
-  }, 500);
+  }, 0);
 }
 
 function playSong() {
@@ -46,7 +46,7 @@ function playSong() {
     if (songOrder === songOrderList.length) {
       clearInterval(intervalInt);
     }
-  }, 480);
+  }, 500);
 }
 /*----------------------------- Event Listeners -----------------------------*/
 playerButtons.forEach((playerButton) => {
